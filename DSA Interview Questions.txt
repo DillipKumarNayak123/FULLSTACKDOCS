@@ -192,3 +192,152 @@ const key ='name';
   console.log(array);
 
 
+
+Array Questions
+Basic Level
+Find the largest element in an array.
+---------------------------------------------
+let arr = [5, 8, 6, 45, 98, 52, 41, 8];
+
+function findLargestArrayEle(arr) {
+    // Initialize largest with the first element.
+    // This is safer than 0 in case all numbers are negative.
+    let largest = arr[0];
+
+    // Start the loop from the second element (i = 1)
+    for (let i = 1; i < arr.length; i++) {
+        // Simply compare and update
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+console.log(findLargestArrayEle(arr)); // Output: 98
+
+Find the second largest element in the array
+-----------------------------------------------
+
+Find the smallest element in an array.
+
+Find the sum of all elements in an array.
+
+Find the average of all elements in an array.
+
+Reverse an array (without using the built-in .reverse() method).
+
+Check if an array is a palindrome (reads the same forwards and backwards).
+
+Remove duplicates from an array.
+
+Merge two sorted arrays into one sorted array.
+
+Find the index of a specific element in an array (manual implementation of indexOf).
+
+Find the second largest element in an array.
+
+Intermediate Level
+Find all pairs of elements in an array that sum up to a specific target (Two Sum problem).
+
+Find the missing number in an array of 1 to N.
+
+Move all zeros to the end of the array while maintaining the order of other elements.
+
+Find the intersection of two arrays (common elements).
+
+Rotate an array to the right by k steps.
+
+Chunk an array into smaller arrays of a specified size.
+
+Example: chunk([1, 2, 3, 4, 5], 2) -> [[1, 2], [3, 4], [5]]
+
+Flatten a nested array (manual implementation, handle 1 level or multiple levels recursively).
+
+Example: flatten([1, [2, [3, [4]], 5]]) -> [1, 2, 3, 4, 5]
+
+Find the majority element in an array (element that appears more than n/2 times).
+
+Advanced Level (Algorithmic)
+Implement your own version of common array methods:
+
+myMap, myFilter, myReduce, myForEach
+
+Kadane's Algorithm: Find the maximum sum of a contiguous subarray.
+
+Merge Intervals: Merge all overlapping intervals in an array of [start, end] pairs.
+
+Product of Array Except Self: Return an array where each element output[i] is equal to the product of all elements of the original array except nums[i] (without using division).
+
+Find the "Kth" largest element in an unsorted array.
+
+Trapping Rain Water: Calculate how much rainwater can be trapped between bars represented by an array of heights.
+
+String Questions
+Basic Level
+Reverse a string (without using the built-in .reverse() method).
+
+Check if a string is a palindrome (ignoring case and non-alphanumeric characters).
+
+Count the number of vowels in a string.
+
+Count the number of words in a string.
+
+Capitalize the first letter of each word in a sentence.
+
+Check if two strings are anagrams of each other (contain the same characters in the same frequency).
+
+Find the most frequent character in a string.
+
+Truncate a string if it is longer than the given maximum length, adding "..." at the end.
+
+Check if a string is a valid email address (basic version using regex or string methods).
+
+Convert a string to title case (Every Word Capitalized).
+
+Intermediate Level
+Find the longest word in a sentence.
+
+Check for balanced parentheses in a string using a stack. (){}[]
+
+Implement a function to compress a string (Basic Run-Length Encoding).
+
+Example: "aabbbcc" -> "a2b3c2"
+
+Longest Substring Without Repeating Characters (Sliding Window technique).
+
+Group Anagrams: Given an array of strings, group the anagrams together.
+
+Valid Palindrome II: Given a string, determine if it can become a palindrome by removing at most one character.
+
+Implement strStr(): Return the index of the first occurrence of a substring (needle) in another string (haystack), or -1 if not found.
+
+Advanced Level (Algorithmic)
+Longest Palindromic Substring in a given string.
+
+Longest Common Prefix amongst an array of strings.
+
+Minimum Window Substring: Find the smallest substring in s that contains all characters of another string t.
+
+Decode a string following a specific pattern. Example: "3[a]2[bc]" -> "aaabcbc".
+
+Zigzag Conversion: Convert a string into a zigzag pattern and read it line by line.
+
+Find All Anagrams in a String: Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+
+Mixed Array & String Questions
+Rotate a matrix (2D array) by 90 degrees.
+
+Spiral Traversal of a matrix (2D array).
+
+Find the first non-repeating character in a string.
+
+Check if one string is a rotation of another (e.g., "waterbottle" is a rotation of "erbottlewat").
+
+Implement a basic string compression function and compare the length to the original.
+
+URLify a string: Replace all spaces in a string with '%20'.
+
+Is Subsequence: Check if string s is a subsequence of string t.
+
+

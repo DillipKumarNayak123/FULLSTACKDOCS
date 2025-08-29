@@ -1,194 +1,81 @@
-Output
--------------
-let a=10;
-let b= ++a;
-let c= a++;
-console.log(a,b,c)
- 12 11 11
+Function Currying
+------------------
+Function Currying is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument.
 
-WAP to find the factorila of a number
-----------------------------------------
+function add(a, b, c) {
+    return a + b + c;
+}
+add(1, 2, 3); // Returns 6
 
-factorila of a number- it is the product of one to the number itself and we represent in n!
- 
-let num =Number(window.prompt('Please enter a number to find the factorial of a it')); //5
-
-if(num>0){ //5>0
-  let fact=1; //fact=1
-  for(let i=1; i<=num;i++){
-
-
-    fact = fact *i;  //fact =120 i=6
-  }
-
-  console.log("The factorial of number "+ num +" is "+fact);
-} else if(num == 0){
-  console.log("The factorial of number "+ num +" is "+1);
-} else{
-  console.log('you have enterd a negative value')
+function printLog(type){
+return function(message){
+console.log(type+"  "+message)
+}
 }
 
-WAP to check if a number is palindrom or not
--------------------------------------------------------
-let originalNumber =Number(window.prompt('Please enter a number to find the factorial of a it')); //5
-let num = originalNumber; //121 
-let sum =0;
-while(num>0){
-let rem = num%10; //1
-num = parseInt(num/10); //0
-sum = sum*10+rem;  // 1  ,   121
+const error=printLog('error')
+
+error('Api error');
+error('Velidation message error')
+
+const imfo=printLog('imfo');
+imfo('page saved')
+
+//it s used for reusability where ever we need error and imfo we can use this
+
+
+Functional Programming (FP) is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. It's a declarative approach rather than imperative.
+
+
+Core Concepts of Functional Programming:
+1. Pure Functions
+Same input always gives same output
+
+No side effects (doesn't modify external state)
+
+// Pure function
+function add(a, b) {
+    return a + b;
 }
 
-if(sum == originalNumber){
-  console.log('it is a palindrom numer');
-}else{
-  console.log('it is not a palindrom number');
+// Impure function (has side effect)
+let total = 0;
+function impureAdd(a) {
+    total += a; // Modifies external state
+    return total;
 }
 
 
-WAP to find a number string or not
----------------------------------------
-145 sum of factorial of all 3 digits is equal to the same number is a strong number.
-  var OriginalNumber=Number(window.prompt('enter a number to check if it is strong'));
-  var num = OriginalNumber;
 
-    var sum=0;
-  while(num>0){
-    var fact=1;
-    let lastnum = num%10;
-    for(let i=1;i<=lastnum;i++){
-      fact = fact*i;
+2. Immutability
+Data cannot be changed after creation
+
+Instead of modifying, create new data
+
+// Mutable (imperative)
+const numbers = [1, 2, 3];
+numbers.push(4); // Modifies original array
+
+// Immutable (functional)
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4]; // Creates new array
+
+
+
+3. First-Class and Higher-Order Functions
+Functions are treated like any other value
+
+Functions can be passed as arguments, returned from functions
+
+// Higher-order function
+function map(array, transform) {
+    const result = [];
+    for (let item of array) {
+        result.push(transform(item));
     }
-    sum =sum+fact;
-    num =parseInt(num/10);
-  }
-  if(sum == OriginalNumber){
-    console.log('it is a strong number')
-  }
-  else{
-    console.log('it is not a strong number')
-  }
+    return result;
+}
 
-Pattern programme
-----------------------
-******
-
-*****
-*****
-*****
-*****
-*****
-
-*
-**
-***
-****
-*****
-
-   *
-  * *
- * * *
-* * * *
-
-
-******
-*****
-****
-***
-**
-*
-
-55555
-4444
-333
-22
-1
-
-1
-22
-333
-4444
-55555
-
-1
-12
-123
-1234
-12345
-
-12345
-1234
-123
-12
-1
-
-54321
-4321
-321
-21
-1
-
-Wite a programme to reverse a string
-----------------------------------------
-var string1='Sugandha';
-var reverseString = string1.split('').reverse().join('');
-
-write a programm to reverse words
------------------------------------
-var string1='Sugandha is a nice girl';
-var reverseString = string1.split(' ').reverse().join(' ');
-
-
-
-
-Write a programme in array to sort the +ve numbers in an array
-------------------------------------------------------------------
-https://learnersbucket.com/examples/algorithms/program-to-sort-only-positive-numbers-of-the-array/
-
-WAP to remove all the duplicate name object
------------------------------------------------
-    var array = [
-      {
-        "name": "Shema",
-        "count": 1,
-      },
-      {
-        "name": "Hero",
-        "count": 1,
-      },
-      {
-        "name": "PVPL",
-        "count": 4,
-      },
-      {
-        "name": "Omega",
-        "count": 8,
-      },
-      {
-        "name": "Hero",
-        "count": 1,
-      },
-      {
-        "name": "Omega",
-        "count": 8,
-      },
-      {
-       "name": "Shema",
-        "count": 1,
-      },
-      {
-        "name": "Shema",
-        "count": 1,
-      },
-      {
-        "name": "Hero",
-        "count": 1,
-      }
-   ]
-const key ='name';
-    const arrayUniqueByKey = [...new Map(array.map(item =>
-  [item[key], item])).values()];
-  console.log(arrayUniqueByKey)
-  console.log(array);
-
-
+// Using it
+const numbers = [1, 2, 3];
+const doubled = map(numbers, x => x * 2);
